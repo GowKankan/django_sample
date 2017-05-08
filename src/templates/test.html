@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h5>Hello world</h5>
+{% for x in post %}
+<div>
+    <p>{{x.title}}</p>
+</div>
+{% endfor %}
+<form method="POST" action="/explorer/new/">
+    {% csrf_token %}
+    <input type="hidden" name = "tid" value="select title from posts_post">
+    <input type="submit" name="select" value="submit"/>
+</form>
+{% endblock content %}

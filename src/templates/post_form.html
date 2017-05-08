@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block content%}
+<div class="col-sm-6 col-sm-offset-3">
+	<h1>Form</h1>
+	<!-- /posts/create , if you leave empty action it will send it to the post/create -->
+	<!-- another website  can send data to our website, to restrict we need to use csrf form validations -->
+	<!-- Djnago provides secuity by default -->
+	<form method="POST" action=""> {% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" class="btn btn-default" value="Create Post">
+	</form>	
+</div>
+{% endblock content %}
